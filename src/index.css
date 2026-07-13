@@ -13,23 +13,28 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Courier New', Courier, monospace;
   background-color: var(--bg-color);
   color: var(--text-dark);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.5rem;
+  width: 100%;
 }
 
 /* Section Styles */
 section {
-  min-height: 100vh;
-  padding: 4rem 2rem;
+  min-height: auto;
+  padding: 3rem 1rem;
   border-bottom: 3px solid var(--dark-bg);
 }
 
@@ -38,13 +43,14 @@ section {
 }
 
 .section-number {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--accent-orange);
   margin-bottom: 0.5rem;
+  letter-spacing: 1px;
 }
 
 .section-title {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
   color: var(--accent-blue);
   margin-bottom: 0.5rem;
@@ -73,32 +79,35 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   position: relative;
+  min-height: 100vh;
+  padding: 2rem 1rem;
 }
 
 .hero-frame {
-  border: 8px solid #f0c674;
-  padding: 4rem;
+  border: 6px solid #f0c674;
+  padding: 2.5rem 1.5rem;
   width: 100%;
+  max-width: 900px;
 }
 
 .hero-subtitle {
-  font-size: 0.8rem;
-  letter-spacing: 2px;
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
   margin-bottom: 1rem;
   color: var(--accent-orange);
 }
 
 .hero-title {
-  font-size: 3rem;
+  font-size: 2.2rem;
   font-weight: bold;
   color: var(--accent-blue);
   margin-bottom: 0.5rem;
 }
 
 .hero-tagline {
-  font-size: 1rem;
+  font-size: 0.95rem;
   margin-bottom: 2rem;
   font-style: italic;
 }
@@ -106,20 +115,22 @@ section {
 .hero-divider {
   height: 2px;
   background-color: var(--dark-bg);
-  margin: 2rem 0;
+  margin: 1.5rem 0;
 }
 
 .hero-footer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  font-size: 0.8rem;
-  margin-top: 2rem;
+  gap: 1rem;
+  font-size: 0.75rem;
+  margin-top: 1.5rem;
 }
 
 /* Card Styles */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
@@ -128,14 +139,29 @@ section {
   color: var(--text-light);
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
 
 .card-title {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   margin-bottom: 1rem;
   color: var(--accent-orange);
+}
+
+.card ul {
+  list-style: none;
+}
+
+.card ul li {
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
 }
 
 /* Service Cards */
@@ -167,16 +193,18 @@ section {
 }
 
 .target-item {
-  padding: 1rem 0;
+  padding: 1.2rem 0;
   border-bottom: 1px solid var(--dark-bg);
   display: flex;
   gap: 1rem;
+  align-items: flex-start;
 }
 
 .target-letter {
   font-weight: bold;
   color: var(--accent-orange);
   min-width: 20px;
+  font-size: 1.1rem;
 }
 
 /* Pricing Table */
@@ -186,13 +214,15 @@ section {
   color: var(--text-light);
   border-radius: 8px;
   overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .pricing-row {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  padding: 0.8rem 1rem;
+  padding: 0.9rem 1rem;
   border-bottom: 1px solid #333;
+  font-size: 0.85rem;
 }
 
 .pricing-row:last-child {
@@ -215,6 +245,7 @@ section {
   display: flex;
   align-items: flex-start;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .qr-box {
@@ -222,31 +253,48 @@ section {
   padding: 1rem;
   border: 3px solid var(--dark-bg);
   border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .qr-code {
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   background-color: #1a1a2e;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
   font-size: 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.qr-code:hover {
+  background-color: #2c2c44;
 }
 
 .brand-links {
   flex: 1;
+  min-width: 280px;
 }
 
 .brand-link-item {
   margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  word-break: break-word;
 }
 
 .brand-link-item a {
   color: var(--accent-orange);
   text-decoration: none;
-  word-break: break-all;
+  transition: opacity 0.3s ease;
+}
+
+.brand-link-item a:hover {
+  opacity: 0.7;
+  text-decoration: underline;
 }
 
 /* Contact Section */
@@ -261,6 +309,7 @@ section {
   color: var(--text-light);
   padding: 1.5rem;
   border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .contact-title {
@@ -271,25 +320,66 @@ section {
 }
 
 .contact-item {
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
 }
 
 .contact-cta {
   margin-top: 2rem;
   font-weight: bold;
   color: var(--accent-orange);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
-/* Responsive */
+/* Alur Kerja */
+.alur-kerja-container {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.alur-kerja-number {
+  color: var(--accent-orange);
+  font-weight: bold;
+}
+
+.alur-kerja-item {
+  margin-bottom: 1.5rem;
+}
+
+.alur-kerja-item strong {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+/* Responsive - Mobile First */
+@media (max-width: 1024px) {
+  section {
+    padding: 2.5rem 1rem;
+  }
+  
+  .container {
+    padding: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-frame {
-    padding: 2rem;
+    padding: 2rem 1.2rem;
   }
   
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+  
+  .hero-tagline {
+    font-size: 0.9rem;
+  }
+  
+  .hero-footer {
+    flex-direction: column;
+    gap: 1.5rem;
   }
   
   .service-cards {
@@ -302,10 +392,79 @@ section {
   
   .qr-container {
     flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
   
   .pricing-row {
     grid-template-columns: 1fr;
     gap: 0.5rem;
+  }
+  
+  .pricing-price {
+    text-align: left;
+  }
+  
+  .alur-kerja-container {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .alur-kerja-number {
+    margin-bottom: 0.3rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .target-item {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.8rem;
+  }
+  
+  section {
+    padding: 2rem 0.8rem;
+  }
+  
+  .hero-frame {
+    padding: 1.5rem 1rem;
+    border-width: 4px;
+  }
+  
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.7rem;
+  }
+  
+  .hero-tagline {
+    font-size: 0.85rem;
+  }
+  
+  .section-title {
+    font-size: 1.4rem;
+  }
+  
+  .card {
+    padding: 1.2rem;
+  }
+  
+  .pricing-row {
+    padding: 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  .qr-code {
+    width: 120px;
+    height: 120px;
   }
 }

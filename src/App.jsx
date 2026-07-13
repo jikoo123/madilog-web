@@ -126,8 +126,13 @@ function App() {
           </p>
           <div className="qr-container">
             <div className="qr-box">
-              <div className="qr-code">QR CODE</div>
-              <p style={{ fontSize: '0.8rem', marginTop: '0.5rem', textAlign: 'center' }}>portfolio web</p>
+              <a href="https://drive.google.com/drive/folders/134X5ywsyBEUPUF94gTdDPfPNsnypds89?usp=sharing" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                <div className="qr-code">
+                  <span style={{ fontSize: '2rem' }}>📁</span>
+                  <span style={{ display: 'block', fontSize: '0.8rem', marginTop: '0.5rem' }}>Lihat Portfolio</span>
+                </div>
+              </a>
+              <p style={{ fontSize: '0.8rem', marginTop: '0.5rem', textAlign: 'center' }}>Klik untuk buka</p>
             </div>
             <div className="brand-links">
               <p style={{ marginBottom: '1rem', fontSize: '0.9rem' }}>
@@ -382,25 +387,35 @@ function App() {
             <h2 className="section-title">Dari Brief Sampai Tayang</h2>
             <div className="section-divider"></div>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '150px 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
-            <div>
-              <p style={{ color: 'var(--accent-orange)', marginBottom: '0.5rem' }}>01</p>
-              <p style={{ color: 'var(--accent-orange)', marginBottom: '0.5rem' }}>02</p>
-              <p style={{ color: 'var(--accent-orange)', marginBottom: '0.5rem' }}>03</p>
-              <p style={{ color: 'var(--accent-orange)', marginBottom: '0.5rem' }}>04</p>
-              <p style={{ color: 'var(--accent-orange)', marginBottom: '0.5rem' }}>05</p>
+          <div className="alur-kerja-container">
+            <div className="alur-kerja-number">
+              <p>01</p>
+              <p>02</p>
+              <p>03</p>
+              <p>04</p>
+              <p>05</p>
             </div>
             <div>
-              <p style={{ marginBottom: '1.3rem' }}><strong>Brief &amp; Perencanaan</strong><br />
-              Diskusi kebutuhan, tujuan, dan pengerjaan yang akan kita buat.</p>
-              <p style={{ marginBottom: '1.3rem' }}><strong>Konsepplan &amp; Gop</strong><br />
-              Rencana shooting, list angle, dan daftar barang yang perlu disiapkan.</p>
-              <p style={{ marginBottom: '1.3rem' }}><strong>Shooting/Pengambilan Video</strong><br />
-              Pengambilan gambar sesuai konsep yang sudah disepakati.</p>
-              <p style={{ marginBottom: '1.3rem' }}><strong>Editing &amp; Review</strong><br />
-              Pengerjaan edit, review, revisi, sampai hasil sesuai harapan.</p>
-              <p><strong>Pengiriman File Final</strong><br />
-              File dikirim dalam resolusi terbaik dan mudah dibagikan.</p>
+              <div className="alur-kerja-item">
+                <strong>Brief & Perencanaan</strong>
+                <span>Diskusi kebutuhan, tujuan, dan pengerjaan yang akan kita buat.</span>
+              </div>
+              <div className="alur-kerja-item">
+                <strong>Konsepplan & Gop</strong>
+                <span>Rencana shooting, list angle, dan daftar barang yang perlu disiapkan.</span>
+              </div>
+              <div className="alur-kerja-item">
+                <strong>Shooting/Pengambilan Video</strong>
+                <span>Pengambilan gambar sesuai konsep yang sudah disepakati.</span>
+              </div>
+              <div className="alur-kerja-item">
+                <strong>Editing & Review</strong>
+                <span>Pengerjaan edit, review, revisi, sampai hasil sesuai harapan.</span>
+              </div>
+              <div className="alur-kerja-item">
+                <strong>Pengiriman File Final</strong>
+                <span>File dikirim dalam resolusi terbaik dan mudah dibagikan.</span>
+              </div>
             </div>
           </div>
           <div className="card">
